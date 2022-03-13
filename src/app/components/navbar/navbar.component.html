@@ -1,0 +1,7 @@
+<nav class="p-4">
+  <ul class="box-row-center">
+    <li class="box-row-center nav-logo"><img src="#" alt="#"/></li>
+    <li class="px-2" *ngFor="let routeItem of routeItems" [routerLink]="['/home']" >{{routeItem.name}}</li>
+    <li class="box-row-center nav-logo-end"><img src="#" alt="#"/></li>
+  </ul>
+</nav>

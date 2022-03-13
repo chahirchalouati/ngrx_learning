@@ -1,0 +1,23 @@
+<app-loader [state]="state$"></app-loader>
+<ul class="grid h-100 w-50  mx-auto py-2" *ngFor="let movie of movies">
+  <li class="card h-25 ">
+    <div class="card-header p-2 bg-light">
+      <div>
+        <img class="rounded-circle" style="width:30px; height: 30px;" src="{{movie.thumbnails}}" alt="asda"/>
+        <span>{{movie.title}}</span>
+        <span>{{state$ | async}}</span>
+      </div>
+    </div>
+    <div class="card-body p-2 h-25"><img class="img-fluid" src="{{movie.thumbnails}}" alt="asda"/></div>
+    <div class="card-footer p-2">
+      <div class="card-text pb-2">{{movie.description}}</div>
+      <div aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item" *ngFor="let author of movie.authors">
+            <a role="link" (click)="navigateToAuthor(author.firstName)">{{author.firstName}} {{author.lastName}}</a>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </li>
+</ul>

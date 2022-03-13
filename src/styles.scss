@@ -1,1 +1,150 @@
-/* You can add global styles to this file, and also import other style files */
+@import "styles/vars";
+@import "styles/mixins";
+.box-row-center {
+  @include flex(row, center, none, 0px);
+  margin: 0 5px;
+  gap: 5px;
+  width: max-content;
+}
+
+.box-title {
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 1rem;
+  letter-spacing: 1px;
+
+}
+
+.box-row-center-center {
+  @include flex(row, center, center);
+  flex-wrap: wrap;
+  width: max-content;
+}
+
+.box-content {
+  color: white;
+  @include flex(row, center);
+  font-size: 12px !important;
+  width: max-content;
+}
+
+.label-xl {
+  font-size: $xxl;
+  font-weight: bold;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  outline: none;
+  text-decoration: none;
+  font-family: $lato;
+  text-shadow: #9e9e9e 0px 0px 1px;
+}
+
+body {
+  min-height: 100vh;
+  background: white;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: $max-width;
+  margin: 0px auto;
+  @media only screen and (max-width: 900px) {
+    padding: 0px 1rem;
+  }
+}
+
+.box-empty-search-result {
+  width: 100%;
+  @include flex(column, none, none, 10px);
+  text-align: center;
+  align-items: center;
+
+}
+
+.btn-back {
+  background: black;
+  color: white;
+  padding: 0.5em 1em;
+  color: white;
+  cursor: pointer;
+  margin: 0.5em;
+  width: max-content;
+
+  &:hover {
+    text-decoration: underline white;
+  }
+}
+
+.text-error {
+  color: red;
+  width: 100%;
+  font-size: $sm;
+  font-weight: 700;
+  margin: 5px;
+  padding: 0;
+
+}
+
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  width: 100vw !important;
+  height: 100vh;
+  background: red;
+}
+
+.row {
+  @include flex(row, none, none, 0px);
+  width: 100%;
+}
+
+.col {
+  @include flex(column, none, none, 0px);
+  width: 100%;
+}
+
+.box {
+  padding: 0.3rem;
+  @include flex(column, none, none, 0px);
+  width: 100% ;
+}
+
+// Table style
+table {
+  border-collapse: collapse;
+  font-size: $md;
+  .table-th {
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-style: italic;
+    padding: 0.5em 0px;
+    text-align: left;
+
+  }
+
+}
